@@ -7,7 +7,8 @@ Recent advancements in the field of AI and deep learning could help with that.
 
 In this project, I implemented a system that stores legal documents in vector forms by leveraging various embedding techniques and it lets the user make queries and retrieve the most relevant document. I made use of the elastic search engine that promises real-time search, scalability, reliability, and flexibility.
 
-This README contains instructions about producing embeddings, seting up the server, filling it with documents, modifying the documents  and retrieving them.
+This README contains instructions about producing embeddings, seting up the server, filling it with documents, modifying the documents and retrieving them.
+In the end, it explains how to evaluate this system.
 
 ## Set up the elasticsearch server
 
@@ -52,6 +53,8 @@ conda activate {environment_name}
 ```
 
 ### Create the embeddings
+
+(Download the documents from here [https://drive.google.com/drive/folders/1i8jiwQqXZUUsyRTKIK_4YBrpozWqv4OZ?usp=sharing]())
 
 Create embeddings for text files that are into a single folder
 
@@ -155,10 +158,10 @@ optional arguments:
 
 # Evaluation
 
-**step 1**: Go to the evaluation folder and run the paraphrase_documents_script script. This modifies all the documents in the ../clean_corpus/ directory using all possible ways and using different values for the hyperparameter. 
+**step 1**: Go to the evaluation folder and run the paraphrase_documents_script script. This modifies all the documents in the ../clean_corpus/ directory using all possible ways and using different values for the hyperparameter.
  It stores them in the paraphrased_corpus/ directory
 
-**step 2**: Run the bulk_queries.py program. This program samples documents from the paraphrased_corpus/ directory, 
+**step 2**: Run the bulk_queries.py program. This program samples documents from the paraphrased_corpus/ directory,
 performs queries using them and stores the results into the ../tests/ folder.
 
 **step 3**: Run the evaluata.py program that accesses the results produced above and generates plots that measure the performance of the system using the mean reciprocal rank metric.
